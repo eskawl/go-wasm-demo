@@ -1,0 +1,10 @@
+# Install task using `npm i -g @go-task/cli
+version: '3'
+
+tasks:
+  build-wasm:
+    cmds:
+      - GOOS=js GOARCH=wasm go build -o main.wasm
+  build-wasm-tiny:
+    cmds:
+      - tinygo build -o main.wasm -target wasm ./main.go
